@@ -70,7 +70,7 @@ class Client:
         data = {"length": length, "numbers": numbers, "symbols": symbols}
         request = requests.post(
             f"{self.api}/password/generate/", 
-			json=data
+			json=data,
             headers=self.headers)
         return request.json()
 
