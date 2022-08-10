@@ -1,12 +1,12 @@
-# RandStuff.py
-API For https://randstuff.ru
+# randstuff.py
+Web-API For [randstuff](https://randstuff.ru) website for generating random stuff
 
-![RandStuffAPI](https://i.postimg.cc/v8hSZRFb/a-OHLI4-V0-FI.jpg)
+![](https://i.postimg.cc/v8hSZRFb/a-OHLI4-V0-FI.jpg)
 
 ### Example
 ```py3
-# Generate Random Joke
 import randstuff
-client = randstuff.Client()
-joke = client.generate_random_joke()["joke"]["text"]
-print(f"Joke >> {joke}")
+randstuff = randstuff.RandStuff()
+random_joke = randstuff.generate_random_joke()["joke"]["text"]
+print(random_joke)
+```
