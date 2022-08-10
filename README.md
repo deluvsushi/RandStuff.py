@@ -1,5 +1,5 @@
 # randstuff.py
-Web-API For [randstuff](https://randstuff.ru) website for generating random stuff
+Web-API for [randstuff](https://randstuff.ru) website to generate random stuff
 
 ![](https://i.postimg.cc/v8hSZRFb/a-OHLI4-V0-FI.jpg)
 
