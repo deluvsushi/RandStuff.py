@@ -4,8 +4,8 @@ class RandStuff:
 	def __init__(self):
 		self.api = "https://randstuff.ru"
 		self.headers = {
-			"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
-			"X-Requested-With": "XMLHttpRequest"
+			"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36",
+			"x-requested-with": "XMLHttpRequest"
 		}
 
 	def generate_random_joke(self):
@@ -32,7 +32,7 @@ class RandStuff:
 		}
 		return requests.post(
 			f"{self.api}/number/generate/",
-			json=data,
+			data=data,
 			headers=self.headers).json()
 
 	def generate_random_wisdom(self):
@@ -51,10 +51,12 @@ class RandStuff:
 			headers=self.headers).json()
 
 	def get_random_ask(self, question: str):
-		data = {"question": question}
+		data = {
+			"question": question
+		}
 		return requests.post(
 			f"{self.api}/ask/generate/",
-			json=data,
+			data=data,
 			headers=self.headers).json()
 
 	def generate_random_password(
@@ -69,7 +71,7 @@ class RandStuff:
 		}
 		return requests.post(
 			f"{self.api}/password/generate/", 
-			json=data,
+			data=data,
 			headers=self.headers).json()
 
 	def generate_random_question(self):
@@ -77,23 +79,34 @@ class RandStuff:
 			f"{self.api}/question/generate/",
 			headers=self.headers).json()
 
-	def answer_to_question(self, id: int, number: int):
-		data = {"id": id, "number": number}
+	def answer_to_question(
+			self,
+			id: int,
+			number: int):
+		data = {
+			"id": id,
+			"number": number
+		}
 		return requests.post(
 			f"{self.api}/question/answer/",
-			json=data,
+			data=data,
 			headers=self.headers).json()
 
 	def generate_random_nickname(self, numbers: int = 1):
-		data = {"numbers": numbers}
+		data = {
+			"numbers": numbers
+		}
 		return requests.post(
 			f"{self.api}/nickname/generate/",
-			json=data,
+			data=data,
 			headers=self.headers).json()
 
 	def generate_random_city(self, country: str = "all"):
-		data = {"country": country}
+		data = {
+			"country": country
+		}
 		return requests.post(
 			f"{self.api}/city/generate/",
-			json=data,
+			data=data,
 			headers=self.headers).json()
+			
